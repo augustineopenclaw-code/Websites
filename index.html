@@ -3,434 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gomez Surplus | California Asset Liquidation Experts</title>
+    <title>Trending Picks | Best Products This Season</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         :root {
-            --primary: #1a1a2e;
-            --secondary: #16213e;
-            --accent: #e94560;
-            --gold: #f4a261;
-            --light: #f8f9fa;
-            --dark: #0f0f23;
+            --primary: #232f3e;
+            --secondary: #ff9900;
+            --light: #f4f4f4;
+            --dark: #333;
+            --white: #fff;
         }
         
         body {
             font-family: 'Segoe UI', system-ui, sans-serif;
-            background: var(--dark);
-            color: var(--light);
+            background: var(--light);
+            color: var(--dark);
             line-height: 1.6;
         }
         
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            background: linear-gradient(135deg, var(--dark) 0%, var(--secondary) 50%, var(--primary) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(233, 69, 96, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(244, 162, 97, 0.1) 0%, transparent 50%);
-        }
-        
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 100px 20px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 40px;
-        }
-        
-        .logo-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--accent), var(--gold));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            font-weight: bold;
-        }
-        
-        .logo-text {
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: -1px;
-        }
-        
-        .logo-text span {
-            color: var(--accent);
-        }
-        
-        .hero h1 {
-            font-size: clamp(40px, 8vw, 80px);
-            line-height: 1.1;
-            margin-bottom: 30px;
-            background: linear-gradient(135deg, #fff 0%, var(--gold) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hero p {
-            font-size: 20px;
-            color: rgba(255,255,255,0.7);
-            max-width: 600px;
-            margin-bottom: 40px;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 16px 40px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-        }
-        
-        .btn-primary {
-            background: var(--accent);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background: #d63652;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            border: 2px solid rgba(255,255,255,0.2);
-            color: white;
-        }
-        
-        .btn-secondary:hover {
-            border-color: var(--gold);
-            color: var(--gold);
-        }
-        
-        /* Stats */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 80px;
-            padding-top: 40px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .stat {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 48px;
-            font-weight: 700;
-            color: var(--gold);
-        }
-        
-        .stat-label {
-            font-size: 14px;
-            color: rgba(255,255,255,0.5);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        
-        /* Services */
-        .services {
-            padding: 100px 20px;
+        header {
             background: var(--primary);
-        }
-        
-        .section-title {
+            color: var(--white);
+            padding: 40px 20px;
             text-align: center;
-            margin-bottom: 60px;
         }
         
-        .section-title h2 {
-            font-size: 48px;
-            margin-bottom: 15px;
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
         
-        .section-title p {
-            color: rgba(255,255,255,0.5);
-            font-size: 18px;
+        header p {
+            opacity: 0.8;
+            font-size: 1.1rem;
         }
         
-        .services-grid {
+        .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .products {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 30px;
         }
         
-        .service-card {
-            background: var(--secondary);
-            padding: 40px;
-            border-radius: 16px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-        }
-        
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--accent), var(--gold));
+        .product-card {
+            background: var(--white);
             border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
-            margin-bottom: 20px;
+            font-size: 60px;
         }
         
-        .service-card h3 {
-            font-size: 24px;
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-category {
+            font-size: 0.8rem;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        
+        .product-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .product-desc {
+            font-size: 0.9rem;
+            color: #666;
             margin-bottom: 15px;
         }
         
-        .service-card p {
-            color: rgba(255,255,255,0.6);
-        }
-        
-        /* Process */
-        .process {
-            padding: 100px 20px;
-            background: var(--dark);
-        }
-        
-        .process-steps {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-        
-        .step {
-            position: relative;
-            padding-left: 30px;
-        }
-        
-        .step-number {
-            position: absolute;
-            left: 0;
-            top: 0;
-            font-size: 60px;
+        .product-price {
+            font-size: 1.2rem;
             font-weight: 700;
-            color: var(--accent);
-            opacity: 0.2;
-            line-height: 1;
+            color: #B12704;
+            margin-bottom: 15px;
         }
         
-        .step h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: var(--gold);
-        }
-        
-        .step p {
-            color: rgba(255,255,255,0.6);
-        }
-        
-        /* CTA */
-        .cta {
-            padding: 100px 20px;
-            background: linear-gradient(135deg, var(--accent), #c73e54);
+        .affiliate-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: var(--secondary);
+            color: var(--dark);
             text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: background 0.3s;
         }
         
-        .cta h2 {
-            font-size: 48px;
-            margin-bottom: 20px;
+        .affiliate-btn:hover {
+            background: #e68a00;
         }
         
-        .cta p {
-            font-size: 20px;
-            opacity: 0.9;
-            margin-bottom: 30px;
+        .affiliate-btn.pending {
+            background: #ccc;
+            cursor: not-allowed;
         }
         
-        /* Footer */
         footer {
-            padding: 40px 20px;
-            background: var(--dark);
+            background: var(--primary);
+            color: var(--white);
             text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 20px;
+            margin-top: 40px;
         }
         
-        footer p {
-            color: rgba(255,255,255,0.4);
-        }
-        
-        /* Mobile */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
-            }
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .disclaimer {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.85rem;
         }
     </style>
 </head>
 <body>
-    <section class="hero">
-        <div class="hero-content">
-            <div class="logo">
-                <div class="logo-icon">G</div>
-                <div class="logo-text">Gomez <span>Surplus</span></div>
-            </div>
-            
-            <h1>Turn Surplus Into <br>Asset Value</h1>
-            <p>California's trusted partner for asset liquidation, equipment disposal, and comprehensive surplus management. We maximize returns while you focus on what matters.</p>
-            
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">Get a Quote</a>
-                <a href="#services" class="btn btn-secondary">Our Services</a>
-            </div>
-            
-            <div class="stats">
-                <div class="stat">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Clients Served</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">$50M+</div>
-                    <div class="stat-label">Assets Recovered</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">98%</div>
-                    <div class="stat-label">Client Satisfaction</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <header>
+        <h1>🛒 Trending Picks</h1>
+        <p>Handpicked products for this season - Updated regularly!</p>
+    </header>
     
-    <section class="services" id="services">
-        <div class="section-title">
-            <h2>Our Services</h2>
-            <p>Comprehensive solutions for every stage of asset lifecycle</p>
+    <div class="container">
+        <div class="disclaimer">
+            <strong>Disclosure:</strong> This site participates in the Amazon Associates Program. 
+            We earn commissions from qualifying purchases at no extra cost to you.
         </div>
         
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">💼</div>
-                <h3>Asset Liquidation</h3>
-                <p>Maximize returns on surplus equipment through strategic resale, auctions, and direct sales to verified buyers.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">🔄</div>
-                <h3>Refurbishment</h3>
-                <p>Professional equipment restoration to extend asset life and increase resale value significantly.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">🔒</div>
-                <h3>Secure Data Destruction</h3>
-                <p>Certified IT asset disposition with NIST-compliant data wiping and destruction certificates.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">🚛</div>
-                <h3>Logistics & Appraisal</h3>
-                <p>End-to-end logistics including transportation, warehousing, and professional equipment valuation.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">♻️</div>
-                <h3>Recycling Program</h3>
-                <p>Environmentally responsible disposal of non-resellable materials with full certification.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">📦</div>
-                <h3>Inventory Management</h3>
-                <p>Complete surplus tracking and reporting for transparent financial reconciliation.</p>
-            </div>
+        <div class="products" id="products">
+            <!-- Products will be added here -->
         </div>
-    </section>
-    
-    <section class="process">
-        <div class="section-title">
-            <h2>How It Works</h2>
-            <p>Simple, transparent process</p>
-        </div>
-        
-        <div class="process-steps">
-            <div class="step">
-                <div class="step-number">01</div>
-                <h3>Consultation</h3>
-                <p>We assess your surplus assets and understand your goals for recovery.</p>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">02</div>
-                <h3>Appraisal</h3>
-                <p>Professional valuation to establish fair market value and recovery potential.</p>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">03</div>
-                <h3>Execution</h3>
-                <p>We handle liquidation, resale, or recycling with full transparency.</p>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">04</div>
-                <h3>Returns</h3>
-                <p>You receive detailed reporting and maximum value recovery.</p>
-            </div>
-        </div>
-    </section>
-    
-    <section class="cta" id="contact">
-        <h2>Ready to Liquidate?</h2>
-        <p>Let's turn your surplus into opportunity. Get a free consultation today.</p>
-        <a href="mailto:info@gomezsurplus.com" class="btn" style="background: white; color: var(--accent);">Contact Us</a>
-    </section>
+    </div>
     
     <footer>
-        <p>© 2026 Gomez Surplus | California | Licensed & Bonded</p>
+        <p>© 2026 Trending Picks | Amazon Associates</p>
     </footer>
+    
+    <script>
+        const products = [
+            {
+                id: 1,
+                category: "Valentine's Day",
+                title: "Teddy Bear Gift Set",
+                description: "Classic plush teddy with heart pillow - perfect gift",
+                price: "$24.99",
+                emoji: "🧸",
+                affiliateLink: "PENDING"
+            },
+            {
+                id: 2,
+                category: "Fitness",
+                title: "Resistance Bands Set",
+                description: "5 levels of resistance for home workout",
+                price: "$19.99",
+                emoji: "💪",
+                affiliateLink: "PENDING"
+            },
+            {
+                id: 3,
+                category: "Electronics",
+                title: "Wireless Earbuds",
+                description: "Bluetooth 5.0 with charging case",
+                price: "$29.99",
+                emoji: "🎧",
+                affiliateLink: "PENDING"
+            },
+            {
+                id: 4,
+                category: "Home",
+                title: "Smart LED Light Bulbs",
+                description: "Voice control, multi-color, works with Alexa",
+                price: "$14.99",
+                emoji: "💡",
+                affiliateLink: "PENDING"
+            },
+            {
+                id: 5,
+                category: "Beauty",
+                title: "Skincare Gift Set",
+                description: "Vitamin C serum + moisturizer bundle",
+                price: "$34.99",
+                emoji: "✨",
+                affiliateLink: "PENDING"
+            },
+            {
+                id: 6,
+                category: "Kitchen",
+                title: "Air Fryer",
+                description: "4.2Qt digital air fryer with recipe book",
+                price: "$49.99",
+                emoji: "🍟",
+                affiliateLink: "PENDING"
+            },
+            {
+                id: 7,
+                category: "Gaming",
+                title: "Wireless Gaming Mouse",
+                description: "RGB lighting, 6D buttons, adjustable DPI",
+                price: "$24.99",
+                emoji: "🖱️",
+                affiliateLink: "PENDING"
+            },
+            {
+                id: 8,
+                category: "Outdoor",
+                title: "Camping Tent",
+                description: "2-person waterproof tent, easy setup",
+                price: "$59.99",
+                emoji: "⛺",
+                affiliateLink: "PENDING"
+            }
+        ];
+        
+        const productsContainer = document.getElementById('products');
+        
+        products.forEach(product => {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.innerHTML = `
+                <div class="product-image">${product.emoji}</div>
+                <div class="product-info">
+                    <div class="product-category">${product.category}</div>
+                    <div class="product-title">${product.title}</div>
+                    <div class="product-desc">${product.description}</div>
+                    <div class="product-price">${product.price}</div>
+                    <a href="#" class="affiliate-btn pending">Link Pending</a>
+                </div>
+            `;
+            productsContainer.appendChild(card);
+        });
+    </script>
 </body>
 </html>
-<!-- Updated Mon Feb 16 17:29:25 EST 2026 -->
